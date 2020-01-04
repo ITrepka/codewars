@@ -1,6 +1,7 @@
 package exercises;
 
 import java.util.BitSet;
+import java.util.Random;
 import java.util.stream.IntStream;
 
 public class Primes {
@@ -14,10 +15,12 @@ public class Primes {
         int primeCandidateIndex = 1;
         while (primeCandidateIndex <= SQRT) {
             primeCandidateIndex = sieve.nextSetBit(primeCandidateIndex + 1);
-            for (int notPrimeIndex = primeCandidateIndex * primeCandidateIndex; notPrimeIndex < MAX; notPrimeIndex += primeCandidateIndex) {
+            for (int notPrimeIndex = primeCandidateIndex * primeCandidateIndex; notPrimeIndex <= MAX; notPrimeIndex += primeCandidateIndex) {
                 sieve.clear(notPrimeIndex);
             }
         }
+
+        Math.random();
     }
 
     public static IntStream stream() {
