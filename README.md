@@ -9,6 +9,7 @@
 | 2 | [Prime Streaming (NC-17)](https://www.codewars.com/kata/59122604e5bc240817000016) | [Primes.java](https://github.com/ITrepka/codewars/blob/master/src/main/java/exercises/Primes.java) |
 | 3 | [Battleship field validator](https://www.codewars.com/kata/52bb6539a4cf1b12d90005b7) | [BattleField.java](https://github.com/ITrepka/codewars/blob/master/src/main/java/exercises/BattleField.java) |
 | 3 | [Psychic](https://www.codewars.com/kata/54bd79a7956834e767001357) | [Psychic.java](https://github.com/ITrepka/codewars/blob/master/src/main/java/exercises/Psychic.java) |
+| 3 | [Prime Streaming (PG-13)](https://www.codewars.com/kata/5519a584a73e70fa570005f5) | [PrimesPG13.java](https://github.com/ITrepka/codewars/blob/master/src/main/java/exercises/PrimesPG13.java) |
 | 4 | [The observed PIN](https://www.codewars.com/kata/5263c6999e0f40dee200059d) | [ObservedPin.java](https://github.com/ITrepka/codewars/blob/master/src/main/java/exercises/ObservedPin.java) |
 | 4 | [Bagels](https://www.codewars.com/kata/54bd6b4c956834c9870001a1) | [BagelSolver.java](https://github.com/ITrepka/codewars/blob/master/src/main/java/exercises/BagelSolver.java) |
 | 4 | [Strip Comments](https://www.codewars.com/kata/51c8e37cee245da6b40000bd) | [StripComments.java](https://github.com/ITrepka/codewars/blob/master/src/main/java/exercises/StripComments.java) |
