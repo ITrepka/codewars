@@ -1,9 +1,5 @@
 package exercises;
 
-import jdk.nashorn.internal.runtime.arrays.ArrayIndex;
-
-import java.util.Arrays;
-
 public class Solution {
     public static int[] twoSum(int[] numbers, int target)
     {

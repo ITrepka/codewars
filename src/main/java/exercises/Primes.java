@@ -1,7 +1,6 @@
 package exercises;
 
 import java.util.BitSet;
-import java.util.Random;
 import java.util.stream.IntStream;
 
 public class Primes {
@@ -19,8 +18,6 @@ public class Primes {
                 sieve.clear(notPrimeIndex);
             }
         }
-
-        Math.random();
     }
 
     public static IntStream stream() {

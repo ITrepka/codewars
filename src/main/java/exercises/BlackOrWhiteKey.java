@@ -5,7 +5,6 @@ import java.util.List;
 
 public class BlackOrWhiteKey {
     public static String blackOrWhiteKey(int keyPressCount) {
-        // "white" - white, "black" - black
         List<String> keys = new ArrayList<>();
         keys.add("white");
         keys.add("black");

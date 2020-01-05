@@ -1,32 +1,23 @@
 package exercises;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 
 public class Calculator {
     private static Pattern numberPattern = Pattern.compile("(-?[0-9]+)\\.?([0-9]?)*");
-    private static Pattern operatorPattern = Pattern.compile("^[*+\\-/^]");
 
     public static double evaluate(String expression) {
-        return countResult(expression);
+        return calculate(expression);
     }
 
-    private static Double countResult(String equation) {
-        String rpn = convertToRpn(equation);
-        Double result = evaluateRPN(rpn);
-        return result;
+    private static Double calculate(String equation) {
+        List<String> rpn = convertToRpn(equation);
+        return evaluateRPN(rpn);
     }
 
-    public static double evaluateRPN(String rpn) {
+    private static double evaluateRPN(List<String> rpn) {
         Stack<Double> stack = new Stack<>();
-        String[] tokens = rpn.split(" ");
-        String token;
-        System.out.println(Arrays.toString(tokens));
-        for (int i = 0; i < tokens.length; i++) {
-            token = tokens[i];
+        for (String token : rpn) {
             if (isDouble(token)) {
                 stack.push(Double.valueOf(token));
             } else {
@@ -37,10 +28,6 @@ public class Calculator {
             }
         }
         return stack.pop();
-    }
-
-    private static boolean isOperator(String string) {
-        return operatorPattern.matcher(string).matches();
     }
 
     private static boolean isDouble(String string) {
@@ -62,58 +49,52 @@ public class Calculator {
         }
     }
 
-    private static int priority(String token) {
-        switch (token) {
-            case "(":
-                return 0;
-            case "+":
-            case "-":
-                return 1;
-            case "*":
-            case "/":
-                return 2;
-            default:
-                throw new RuntimeException("probably bad operator pattern");
-        }
-    }
+    private static List<String> convertToRpn(String equation) {
+        Map<String, Integer> operatorsPriority = new HashMap<>();
+        operatorsPriority.put("(", 0);
+        operatorsPriority.put("+", 1);
+        operatorsPriority.put("-", 1);
+        operatorsPriority.put("*", 2);
+        operatorsPriority.put("/", 2);
 
-    private static String convertToRpn(String equation) { //"3 + 2 * 5"
         Stack<String> stack = new Stack();
-        StringBuilder output = new StringBuilder();
+        List<String> output = new LinkedList<>();
         String[] tokens = equation.split(" ");
-        List<String> tokensList = Arrays.stream(tokens)
-                .map(token -> token.trim())
-                .filter(token -> token.length() > 0)
-                .collect(Collectors.toList());
-        for (int i = 0; i < tokensList.size(); i++) {
-            String token = tokensList.get(i);
+        for (String token : tokens) {
             if (token.equals("(")) { //step 8
                 stack.push(token);
                 continue;
-            } else if (token.equals(")")) { // step11
+            }
+            if (token.equals(")")) { // step11
                 String operator;
                 while (!stack.peek().equals("(")) {
                     operator = stack.pop();
-                    output.append(operator + " ");
+                    output.add(operator);
                 }
                 stack.pop();
                 continue;
-            } else if (isOperator(token)) { //step17
-                while (!stack.isEmpty() && priority(token) <= priority(stack.peek())) {
+            }
+            if (operatorsPriority.containsKey(token)) { //step17
+                while (!stack.isEmpty() && operatorsPriority.get(token) <= operatorsPriority.get(stack.peek())) {
                     String operator;
                     operator = stack.pop();
-                    output.append(operator + " ");
+                    output.add(operator);
                 }
                 stack.push(token);
                 continue;
-            } else {
-                output.append(token + " ");
             }
+
+            if (isDouble(token)) {
+                output.add(token);
+                continue;
+            }
+
+            throw new IllegalArgumentException("Invalid inpuuuut");
         }
         while (!stack.isEmpty()) {
-            output.append(stack.pop() + " ");
+            output.add(stack.pop());
         }
 
-        return output.toString();
+        return output;
     }
 }

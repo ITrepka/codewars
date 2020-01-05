@@ -4,7 +4,6 @@ import java.util.regex.Pattern;
 
 public class PigLatin {
     public static String pigIt(String str) {
-//        return str.replaceAll("(\\w)(\\w*)", "$2$1ay");
         String[] split = str.split("");
         String regex = "[A-Za-z0-9]+";
 
