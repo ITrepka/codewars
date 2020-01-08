@@ -14,6 +14,7 @@
 | 4 | [Bagels](https://www.codewars.com/kata/54bd6b4c956834c9870001a1) | [BagelSolver.java](https://github.com/ITrepka/codewars/blob/master/src/main/java/exercises/BagelSolver.java) |
 | 4 | [Strip Comments](https://www.codewars.com/kata/51c8e37cee245da6b40000bd) | [StripComments.java](https://github.com/ITrepka/codewars/blob/master/src/main/java/exercises/StripComments.java) |
 | 5 | [Simple Pig Latin](https://www.codewars.com/kata/520b9d2ad5c005041100000f) | [PigLatin.java](https://github.com/ITrepka/codewars/blob/master/src/main/java/exercises/PigLatin.java) |
+| 5 | [Sports League Table Ranking](https://www.codewars.com/kata/5e0baea9d772160032022e8c) | [LeagueOrder.java](https://github.com/ITrepka/codewars/blob/master/src/main/java/exercises/LeagueOrder.java) |
 | 6 | [Piano Kata, Part 1](https://www.codewars.com/kata/589273272fab865136000108) | [BlackOrWhiteKey.java](https://github.com/ITrepka/codewars/blob/master/src/main/java/exercises/BlackOrWhiteKey.java) |
 | 6 | [Reverse polish notation calculator](https://www.codewars.com/kata/52f78966747862fc9a0009ae) | [Calc.java](https://github.com/ITrepka/codewars/blob/master/src/main/java/exercises/Calc.java) |
 | 6 | [Delete occurrences of an element if it occurs more than n times](https://www.codewars.com/kata/554ca54ffa7d91b236000023) | [EnoughIsEnough.java](https://github.com/ITrepka/codewars/blob/master/src/main/java/exercises/EnoughIsEnough.java) |
