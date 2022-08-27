@@ -1,15 +1,6 @@
 package exercises;
 
 public class Spiralizor {
-    public static void main(String[] args) {
-        int[][] spiralize = spiralize(10);
-        for (int i = 0; i < spiralize.length; i++) {
-            for (int j = 0; j < spiralize[i].length; j++) {
-                System.out.print(spiralize[i][j] + "\t");
-            }
-            System.out.println();
-        }
-    }
     public static int[][] spiralize(int size) {
         int[][] spiral = new int[size][size];
         //first row
